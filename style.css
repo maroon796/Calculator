@@ -15,6 +15,10 @@ body {
   padding: 30px;
 }
 
+.el:hover {
+  background-color: cadetblue;
+}
+
 .container {
   display: grid;
   height: 500px;
@@ -32,4 +36,17 @@ body {
 .el--1 {
   grid-column: span 4;
   text-align: right;
+  background-color: #4cb2ff;
+}
+
+.num {
+  background-color: #0053b3;
+}
+
+.oper {
+  background-color: #f14c4c;
+}
+
+.reset {
+  background-color: #ffcd99;
 }
