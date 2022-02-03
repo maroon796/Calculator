@@ -4,13 +4,15 @@ const numElements = document.querySelectorAll('.num');
 const output = document.querySelector('.el--1');
 const reset = document.querySelector('.reset');
 let firstNum;
-let secondNum;
+let secondNum = '';
 let operation;
 const equal = document.querySelector('.equal');
 const mult_ = document.querySelector('.mult');
 const divide_ = document.querySelector('.divide');
 const plus_ = document.querySelector('.plus');
 const minus_ = document.querySelector('.minus');
+
+let numberExist = false;
 
 numElements.forEach(function (number) {
   number.addEventListener('click', function () {
@@ -23,9 +25,13 @@ numElements.forEach(function (number) {
       firstNum = output.textContent;
       console.log(firstNum);
     } else if (operation) {
-      output.textContent = number.textContent;
-      secondNum = number.textContent;
+      secondNum = secondNum + number.textContent;
+      output.textContent = secondNum;
       console.log(secondNum);
+      // number.textContent == 0? output.textContent = number.textContent : output.textContent = output.textContent + number.textContent;
+      // output.textContent = number.textContent;
+      // secondNum = number.textContent;
+      // console.log(secondNum);
     }
     // else if (output.textContent == 0 && operation) {
     //   output.textContent = number.textContent;
@@ -84,7 +90,7 @@ equal.addEventListener('click', function () {
 reset.addEventListener('click', function () {
   console.log(reset);
   firstNum = 0;
-  secondNum = 0;
+  secondNum = '';
   operation = 0;
   output.textContent = '0';
 });
