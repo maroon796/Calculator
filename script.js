@@ -7,7 +7,10 @@ let firstNum;
 let secondNum;
 let operation;
 const equal = document.querySelector('.equal');
-const multy = document.querySelector('.mult');
+const mult_ = document.querySelector('.mult');
+const divide_ = document.querySelector('.divide');
+const plus_ = document.querySelector('.plus');
+const minus_ = document.querySelector('.minus');
 
 numElements.forEach(function (number) {
   number.addEventListener('click', function () {
@@ -37,14 +40,31 @@ numElements.forEach(function (number) {
   });
 });
 
-multy.addEventListener('click', function () {
+// OPERATORS
+
+mult_.addEventListener('click', function () {
   console.log('*');
   operation = 'mult';
 });
 
+divide_.addEventListener('click', function () {
+  console.log('/');
+  operation = 'div';
+});
+
+plus_.addEventListener('click', function () {
+  console.log('+');
+  operation = 'plus';
+});
+
+minus_.addEventListener('click', function () {
+  console.log('-');
+  operation = 'minus';
+});
+
 const mult = (a, b) => Number(a) * Number(b);
 const divide = (a, b) => a / b;
-const plus = (a, b) => a + b;
+const plus = (a, b) => Number(a) + Number(b);
 const minus = (a, b) => a - b;
 
 equal.addEventListener('click', function () {
