@@ -2,6 +2,7 @@
 
 const numElements = document.querySelectorAll('.num');
 const output = document.querySelector('.el--1');
+const reset = document.querySelector('.reset');
 let firstNum;
 let secondNum;
 let operation;
@@ -57,4 +58,13 @@ equal.addEventListener('click', function () {
   } else if (operation === 'minus') {
     output.textContent = minus(firstNum, secondNum);
   }
+});
+
+// RESET
+reset.addEventListener('click', function () {
+  console.log(reset);
+  firstNum = 0;
+  secondNum = 0;
+  operation = 0;
+  output.textContent = '0';
 });
